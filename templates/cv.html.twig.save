@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p>{{ title }}</p>
+
+    <h2>Personal Information</h2>
+    <ul>
+        <li>Email: {{ email }}</li>
+        <li>Phone: {{ phone }}</li>
+        <li>Address: {{ address }}</li>
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        {% for degree in education %}
+            <li>{{ degree.title }} - {{ degree.institution }} ({{ degree.year }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Experience</h2>
+    <ul>
+        {% for job in experience %}
+            <li>{{ job.position }} at {{ job.company }} ({{ job.years }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
